@@ -13,7 +13,7 @@ using System.Windows.Forms;
     Juan Rodriguez
     CIST 2341
     C# Programming 1
-    Lab #4
+    Lab #5
 simple calculator app
 This is my code....
 *****************************************************************/
@@ -22,6 +22,8 @@ namespace Calculator
 {
     public partial class Form1 : Form
     {
+        //global variable
+        int storeAnswer;
         public Form1()
         {
             InitializeComponent();
@@ -238,6 +240,40 @@ namespace Calculator
         {
             String message = "This calculator was created by Juan Rodriguez.";
             DialogResult  = MessageBox.Show(message);
+        }
+
+        private void forLoopBtn_Click(object sender, EventArgs e)
+        {
+
+            for (int count = 0; count < 10; count += 1) 
+            {
+                Console.WriteLine("Go Falcons");
+            }
+            
+        }
+
+        private void whileLoopBtn_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            while (i < 10)
+            {
+                Console.WriteLine("Go Falcons");
+                i = i + 1;
+            }
+        }
+
+        private void memoryBtn_Click(object sender, EventArgs e)
+        {
+            storeAnswer = int.Parse(answerBox.Text);
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(memoryBox, storeAnswer.ToString());
+        }
+
+        private void memoryAddBtn_Click(object sender, EventArgs e)
+        {
+            storeAnswer += int.Parse(answerBox.Text);
+            ToolTip toolTip = new ToolTip();
+            toolTip.SetToolTip(memoryBox, DialogResult.ToString());
         }
     }
 }

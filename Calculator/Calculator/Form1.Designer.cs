@@ -49,12 +49,21 @@ namespace Calculator
             this.menuItems = new System.Windows.Forms.ToolStripMenuItem();
             this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.aboutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.calculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.backgroundColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.buttonColorToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.calculateToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.forLoopBtn = new System.Windows.Forms.Button();
+            this.whileLoopBtn = new System.Windows.Forms.Button();
+            this.memoryBtn = new System.Windows.Forms.Button();
+            this.mLabel = new System.Windows.Forms.Label();
+            this.memoryDisplay = new System.Windows.Forms.Label();
+            this.memoryAddBtn = new System.Windows.Forms.Button();
+            this.toolTip = new System.Windows.Forms.ToolTip(this.components);
+            this.memoryBox = new System.Windows.Forms.PictureBox();
             this.helpMenu.SuspendLayout();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoryBox)).BeginInit();
             this.SuspendLayout();
             // 
             // addBtn
@@ -223,49 +232,125 @@ namespace Calculator
             this.helpToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.aboutToolStripMenuItem});
             this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
-            this.helpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.helpToolStripMenuItem.Text = "Help";
             // 
             // aboutToolStripMenuItem
             // 
             this.aboutToolStripMenuItem.Name = "aboutToolStripMenuItem";
-            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.aboutToolStripMenuItem.Size = new System.Drawing.Size(107, 22);
             this.aboutToolStripMenuItem.Text = "About";
             this.aboutToolStripMenuItem.Click += new System.EventHandler(this.aboutToolStripMenuItem_Click);
-            // 
-            // calculateToolStripMenuItem
-            // 
-            this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
-            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.calculateToolStripMenuItem.Text = "Calculate";
-            this.calculateToolStripMenuItem.Click += new System.EventHandler(this.calculateToolStripMenuItem_Click);
-            // 
-            // exitToolStripMenuItem
-            // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
-            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // backgroundColorToolStripMenuItem
             // 
             this.backgroundColorToolStripMenuItem.Name = "backgroundColorToolStripMenuItem";
-            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backgroundColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.backgroundColorToolStripMenuItem.Text = "Background Color";
             this.backgroundColorToolStripMenuItem.Click += new System.EventHandler(this.backgroundColorToolStripMenuItem_Click);
             // 
             // buttonColorToolStripMenuItem
             // 
             this.buttonColorToolStripMenuItem.Name = "buttonColorToolStripMenuItem";
-            this.buttonColorToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.buttonColorToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
             this.buttonColorToolStripMenuItem.Text = "Button Color";
             this.buttonColorToolStripMenuItem.Click += new System.EventHandler(this.buttonColorToolStripMenuItem_Click);
+            // 
+            // calculateToolStripMenuItem
+            // 
+            this.calculateToolStripMenuItem.Name = "calculateToolStripMenuItem";
+            this.calculateToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.calculateToolStripMenuItem.Text = "Calculate";
+            this.calculateToolStripMenuItem.Click += new System.EventHandler(this.calculateToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(170, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
+            // 
+            // forLoopBtn
+            // 
+            this.forLoopBtn.Location = new System.Drawing.Point(63, 27);
+            this.forLoopBtn.Name = "forLoopBtn";
+            this.forLoopBtn.Size = new System.Drawing.Size(97, 24);
+            this.forLoopBtn.TabIndex = 14;
+            this.forLoopBtn.Text = "For Loop";
+            this.forLoopBtn.UseVisualStyleBackColor = true;
+            this.forLoopBtn.Click += new System.EventHandler(this.forLoopBtn_Click);
+            // 
+            // whileLoopBtn
+            // 
+            this.whileLoopBtn.Location = new System.Drawing.Point(180, 26);
+            this.whileLoopBtn.Name = "whileLoopBtn";
+            this.whileLoopBtn.Size = new System.Drawing.Size(129, 24);
+            this.whileLoopBtn.TabIndex = 15;
+            this.whileLoopBtn.Text = "While Loop";
+            this.whileLoopBtn.UseVisualStyleBackColor = true;
+            this.whileLoopBtn.Click += new System.EventHandler(this.whileLoopBtn_Click);
+            // 
+            // memoryBtn
+            // 
+            this.memoryBtn.Location = new System.Drawing.Point(321, 26);
+            this.memoryBtn.Name = "memoryBtn";
+            this.memoryBtn.Size = new System.Drawing.Size(117, 24);
+            this.memoryBtn.TabIndex = 16;
+            this.memoryBtn.Text = "M";
+            this.memoryBtn.UseVisualStyleBackColor = true;
+            this.memoryBtn.Click += new System.EventHandler(this.memoryBtn_Click);
+            // 
+            // mLabel
+            // 
+            this.mLabel.AutoSize = true;
+            this.mLabel.Location = new System.Drawing.Point(658, 389);
+            this.mLabel.Name = "mLabel";
+            this.mLabel.Size = new System.Drawing.Size(0, 13);
+            this.mLabel.TabIndex = 17;
+            // 
+            // memoryDisplay
+            // 
+            this.memoryDisplay.AutoSize = true;
+            this.memoryDisplay.Location = new System.Drawing.Point(470, 38);
+            this.memoryDisplay.Name = "memoryDisplay";
+            this.memoryDisplay.Size = new System.Drawing.Size(0, 13);
+            this.memoryDisplay.TabIndex = 18;
+            // 
+            // memoryAddBtn
+            // 
+            this.memoryAddBtn.Location = new System.Drawing.Point(321, 55);
+            this.memoryAddBtn.Name = "memoryAddBtn";
+            this.memoryAddBtn.Size = new System.Drawing.Size(117, 24);
+            this.memoryAddBtn.TabIndex = 19;
+            this.memoryAddBtn.Text = "M+";
+            this.memoryAddBtn.UseVisualStyleBackColor = true;
+            this.memoryAddBtn.Click += new System.EventHandler(this.memoryAddBtn_Click);
+            // 
+            // toolTip
+            // 
+            this.toolTip.BackColor = System.Drawing.Color.LightGray;
+            // 
+            // memoryBox
+            // 
+            this.memoryBox.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.memoryBox.Location = new System.Drawing.Point(444, 38);
+            this.memoryBox.Name = "memoryBox";
+            this.memoryBox.Size = new System.Drawing.Size(115, 41);
+            this.memoryBox.TabIndex = 20;
+            this.memoryBox.TabStop = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.memoryBox);
+            this.Controls.Add(this.memoryAddBtn);
+            this.Controls.Add(this.memoryDisplay);
+            this.Controls.Add(this.mLabel);
+            this.Controls.Add(this.memoryBtn);
+            this.Controls.Add(this.whileLoopBtn);
+            this.Controls.Add(this.forLoopBtn);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnColorPicker);
             this.Controls.Add(this.colorBtn);
@@ -285,6 +370,7 @@ namespace Calculator
             this.helpMenu.ResumeLayout(false);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.memoryBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -315,6 +401,14 @@ namespace Calculator
         private System.Windows.Forms.ToolStripMenuItem buttonColorToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem calculateToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.Button forLoopBtn;
+        private System.Windows.Forms.Button whileLoopBtn;
+        private System.Windows.Forms.Button memoryBtn;
+        private System.Windows.Forms.Label mLabel;
+        private System.Windows.Forms.Label memoryDisplay;
+        private System.Windows.Forms.Button memoryAddBtn;
+        private System.Windows.Forms.ToolTip toolTip;
+        private System.Windows.Forms.PictureBox memoryBox;
     }
 }
 
