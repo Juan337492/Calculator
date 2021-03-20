@@ -13,7 +13,8 @@ using System.Windows.Forms;
     Juan Rodriguez
     CIST 2341
     C# Programming 1
-    Lab #5
+    Lab #9
+try & catch 
 simple calculator app
 This is my code....
 *****************************************************************/
@@ -31,66 +32,64 @@ namespace Calculator
 
         private void calculateBtn_Click(object sender, EventArgs e)
         {
-    // first Check if a text box is empty
-            if (input1.Text == "" || input2.Text == "")
+            double answer;
+            double inputOne;
+            double inputTwo;
+            try
             {
-                MessageBox.Show("Enter a number!");
+                // first Check if a text box is empty
+                if (input1.Text == "" || input2.Text == "")
+                {
+                    MessageBox.Show("Enter a number!");
 
+                }
+                //by using else-if we avoid an error from stoping our program when textbox is empty
+                else if (addBtn.Checked)
+                {
+
+
+                    inputOne = Double.Parse(input1.Text);
+                    inputTwo = Double.Parse(input2.Text);
+
+                    answer = inputOne + inputTwo;
+
+                    answerBox.Text = "" + answer;
+
+                }
+                else if (subtractBtn.Checked)
+                {
+
+                    inputOne = Double.Parse(input1.Text);
+                    inputTwo = Double.Parse(input2.Text);
+
+                    answer = inputOne - inputTwo;
+
+                    answerBox.Text = "" + answer;
+                }
+                else if (multiplyBtn.Checked)
+                {
+
+                    inputOne = Double.Parse(input1.Text);
+                    inputTwo = Double.Parse(input2.Text);
+
+                    answer = inputOne * inputTwo;
+
+                    answerBox.Text = "" + answer;
+                }
+                else if (divideBtn.Checked)
+                {
+
+                    inputOne = Double.Parse(input1.Text);
+                    inputTwo = Double.Parse(input2.Text);
+
+                    answer = inputOne / inputTwo;
+
+                    answerBox.Text = "" + answer;
+                }
             }
-    //by using else-if we avoid an error from stoping our program when textbox is empty
-            else if (addBtn.Checked)
-            {
-               
-                double answer;
-                double inputOne;
-                double inputTwo;
-
-                inputOne = Double.Parse(input1.Text);
-                inputTwo = Double.Parse(input2.Text);
-
-                answer = inputOne + inputTwo;
-
-                answerBox.Text = "" + answer;
-
-            }
-           else if (subtractBtn.Checked)
-            {
-                double answer;
-                double inputOne;
-                double inputTwo;
-
-                inputOne = Double.Parse(input1.Text);
-                inputTwo = Double.Parse(input2.Text);
-
-                answer = inputOne - inputTwo;
-
-                answerBox.Text = "" + answer;
-            }
-            else if (multiplyBtn.Checked)
-            {
-                double answer;
-                double inputOne;
-                double inputTwo;
-
-                inputOne = Double.Parse(input1.Text);
-                inputTwo = Double.Parse(input2.Text);
-
-                answer = inputOne * inputTwo;
-
-                answerBox.Text = "" + answer;
-            }
-            else if (divideBtn.Checked)
-            {
-                double answer;
-                double inputOne;
-                double inputTwo;
-
-                inputOne = Double.Parse(input1.Text);
-                inputTwo = Double.Parse(input2.Text);
-
-                answer = inputOne / inputTwo;
-
-                answerBox.Text = "" + answer;
+            catch {
+                MessageBox.Show("An error has occurred. Check you input.");
+            
             }
         }
 // Buttons calculate btn ,clear btn, exit btn, background color button, and button color button
